@@ -46,11 +46,11 @@ class NewContent(object):
 
     def run(self):
         self.get_news_content()
-        # if self.s_tree.find('此内容因违规无法查看') >= 0 or self.s_tree.find(
-        #         '此内容被投诉且经审核涉嫌侵权') >= 0 or self.s_tree.find('该内容已被发布者删除') >= 0:
-        #     self.wx_chain = '涉嫌违规，不予展示'
-        #     print(self.wx_chain)
-        #     return
+        if self.art_content.find('此内容因违规无法查看') >= 0 or self.art_content.find(
+                '此内容被投诉且经审核涉嫌侵权') >= 0 or self.art_content.find('该内容已被发布者删除') >= 0:
+            self.art_content = '涉嫌违规，不予展示'
+            print(self.url)
+            return
         self.get_img_urls()
 
 
