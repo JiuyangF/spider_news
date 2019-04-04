@@ -24,7 +24,7 @@ class NewContent(object):
         # self.pub_time = ''
 
     def __repr__(self):
-        return ('url: %s \nimg_urls %s' % (self.url, self.img_urls))
+        return 'url: %s \nimg_urls %s' % (self.url, self.img_urls)
 
     @property
     def clear_content(self):
@@ -46,10 +46,9 @@ class NewContent(object):
 
     def run(self):
         self.get_news_content()
-        if self.art_content.find('此内容因违规无法查看') >= 0 or self.art_content.find(
-                '此内容被投诉且经审核涉嫌侵权') >= 0 or self.art_content.find('该内容已被发布者删除') >= 0:
-            self.art_content = '涉嫌违规，不予展示'
-            print(self.url)
+        if self.art_content == '':
+            self.art_content = '404'
+            print("获取文章内容为空%s" % self.url)
             return
         self.get_img_urls()
 
@@ -58,7 +57,7 @@ if __name__ == '__main__':
     session = requests.session()
     session.headers['User-Agent'] = UA
 
-    ac = NewContent(url='http://news.9939.com/hrsz/2019/0228/4724680.shtml',
+    ac = NewContent(url='http://news.9939.com/hrsz/2019/0308/4726323.shtml',
                     session=session)
     ac.run()
     print(ac)

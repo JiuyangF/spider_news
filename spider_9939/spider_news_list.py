@@ -14,7 +14,6 @@ def merge_news_info(page_content):
     :return:
     """
     news_list = []
-    new_dict = {}
 
     s_tree = etree.HTML(page_content)
 
@@ -22,6 +21,7 @@ def merge_news_info(page_content):
     news_content = s_tree.xpath('//a[@class="m_listone-right-title"]')
 
     for one_new in news_content:
+        new_dict = {}
         new_dict['title'] = one_new.text
         new_dict['url'] = one_new.attrib['href']
         # new_dict['url'] = one_new.xpath('./@href')
