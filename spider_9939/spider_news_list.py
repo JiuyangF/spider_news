@@ -3,7 +3,7 @@
 # @Author  : jiuyang
 # @File    : spider_9939_news.py
 import requests
-from .run import UA
+from spider_9939.run import UA
 from lxml import etree
 
 
@@ -24,6 +24,7 @@ def merge_news_info(page_content):
     for one_new in news_content:
         new_dict['title'] = one_new.text
         new_dict['url'] = one_new.attrib['href']
+        # new_dict['url'] = one_new.xpath('./@href')
         news_list.append(new_dict)
 
     return news_list
@@ -63,4 +64,4 @@ if __name__ == '__main__':
     session.headers['User-Agent'] = UA
 
     all_news_list = get_news_lists(session, 1)
-    save_all_news_list('dev',all_news_list)
+    save_all_news_list('dev', all_news_list)
