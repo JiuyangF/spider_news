@@ -3,7 +3,7 @@
 # @Author  : jiuyang
 # @File    : spider_9939_news.py
 import requests
-from Spider.spider_9939.run import UA
+from .run import UA
 from lxml import etree
 
 
