@@ -45,13 +45,16 @@ class NewContent(object):
             self.img_urls.append(img_a.attrib['src'])
 
     def run(self):
-        self.get_news_content()
-        if self.art_content == '':
-            self.art_content = '404'
-            print("获取文章内容为空%s" % self.url)
-            return
-        print(self.art_content)
-        self.get_img_urls()
+        try:
+            self.get_news_content()
+            if self.art_content == '':
+                self.art_content = '404'
+                print("获取文章内容为空%s" % self.url)
+                return
+            # print(self.art_content)
+            self.get_img_urls()
+        except Exception as a:
+            print(a)
 
 
 if __name__ == '__main__':

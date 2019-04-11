@@ -46,7 +46,7 @@ def get_news_lists(session, page_num):
         # 调用格式化文章列表数据的函数 返回文章列表
         news_list = merge_news_info(respond.content.decode('utf-8'))
         all_news_list.extend(news_list)
-    print(all_news_list)
+    # print(all_news_list)
     return all_news_list
 
 
@@ -65,4 +65,4 @@ if __name__ == '__main__':
     session.headers['User-Agent'] = UA
 
     all_news_list = get_news_lists(session, 1)
-    save_all_news_list('dev', all_news_list)
+    # save_all_news_list('dev', all_news_list)
