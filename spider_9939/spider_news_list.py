@@ -3,8 +3,9 @@
 # @Author  : jiuyang
 # @File    : spider_9939_news.py
 import requests
-from spider_9939.run import UA
 from lxml import etree
+
+from spider_9939.settings import UA
 
 
 def merge_news_info(page_content):

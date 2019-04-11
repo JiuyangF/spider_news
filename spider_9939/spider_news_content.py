@@ -5,7 +5,7 @@
 import requests
 from lxml import etree
 
-from spider_9939.run import UA
+from spider_9939.settings import UA
 
 
 class NewContent(object):
