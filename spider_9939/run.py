@@ -17,6 +17,8 @@ def run(page_num):
 
     # 获取文章的列表
     all_news_list = get_news_lists(session, page_num)
+
+    # 获取文章内容
     for art_info in all_news_list:
         url = art_info['url']
         ac = NewContent(url=url,
