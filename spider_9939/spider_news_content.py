@@ -14,9 +14,9 @@ class NewContent(object):
         # self.title = title
         self.url = url
 
-        self.art_content = ''
-        self.s_tree = None
-        self.img_urls = []
+        self.art_content = ''   # 清洗后的文章内容
+        self.s_tree = None  # 文章的xpath tree
+        self.img_urls = []  # 文章中的图片url列表
         # self.read_num = 0
         # self.like_num = 0
         # self.comment_json = ''
@@ -50,6 +50,7 @@ class NewContent(object):
             self.art_content = '404'
             print("获取文章内容为空%s" % self.url)
             return
+        print(self.art_content)
         self.get_img_urls()
 
 
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     session = requests.session()
     session.headers['User-Agent'] = UA
 
-    ac = NewContent(url='http://news.9939.com/hrsz/2019/0308/4726323.shtml',
+    ac = NewContent(url='http://news.9939.com/hrsz/2019/0308/4726322.shtml',
                     session=session)
     ac.run()
     print(ac)
