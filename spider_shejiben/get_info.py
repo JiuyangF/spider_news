@@ -2,6 +2,7 @@
 # @Time    : 2019-11-20 5:57 PM
 # @Author  : jiuyang
 # @File    : get_info.py
+import datetime
 import time
 from lxml import etree
 
@@ -10,8 +11,8 @@ import json
 import re
 import random
 
-from spider_shejiben.mail_helper import MyEmail
-from spider_shejiben.settings import URL, UA, HAVE_SEND_CODE, SEND_TIMES, DETAIL_URL
+from mail_helper import MyEmail
+from settings import URL, UA, HAVE_SEND_CODE, SEND_TIMES, DETAIL_URL
 
 
 def merge_news_info(page_content):
@@ -49,8 +50,10 @@ def merge_news_info(page_content):
         except Exception as e:
             print("解析网页错误%s" % e)
             continue
+    print("finish", datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
     if message:
         email_handel.send(message, to_user)
+    print("邮件发送完成")
     return news_list
 
 
@@ -78,10 +81,10 @@ def get_show():
             merge_news_info(res_c)
         except Exception as e:
             print("主程序报错 %s" % e)
-        time.sleep(60)
+        time.sleep(random.randint(10, 30))
 
 
-to_user = ["shejiben_sunfuss@163.com"]
+to_user = ["shejiben_sunfuss@163.com", "sunfuss@126.com"]  # "shejiben_sunfuss@163.com","yangjt@knowbox.cn",
 email_handel = MyEmail()
 
 if __name__ == '__main__':

@@ -6,11 +6,14 @@ from email.mime.text import MIMEText
 class MyEmail:
     def send(self, message, to_user):
         try:
-            user = "shejiben_sunfuss@163.com"
-            passwd = "a1b2c3d4"
-            server = smtplib.SMTP("smtp.163.com", 25)
+            # user = "shejiben_sunfuss@163.com"
+            # passwd = "a1b2c3d4"
+            # server = smtplib.SMTP_SSL("smtp.163.com", 465)
+            user = "3467266139@qq.com"
+            passwd = "wjmxscginvlncjic"
+            server = smtplib.SMTP("smtp.qq.com", 25)
             server.login(user, passwd)
-            server.sendmail("<%s>" % user, to_user, self.get_attach(message))
+            server.sendmail(user, to_user, self.get_attach(message))
             server.quit()
             print("send email successful")
         except Exception as e:
@@ -36,11 +39,12 @@ class MyEmail:
         #         """.format(url, title, price).encode('utf-8')
         attach = MIMEText(html, 'html', 'utf-8')
         attach["Subject"] = "设计任务 {}".format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
-        attach["From"] = "发件人<shejiben_sunfuss@163.com>"
+        attach["From"] = "3467266139@qq.com"
+        attach["To"] = "duoman0010@163.com"
         return attach.as_string()
 
 
 if __name__ == '__main__':
     # MyEmail().send("978","lill@knowbox.cn")
-    MyEmail().send("6783", ["yangjt@knowbox.cn"])
+    MyEmail().send("6783", "duoman0010@163.com")
     # MyEmail().send("37834", ["1635375337@qq.com"])
