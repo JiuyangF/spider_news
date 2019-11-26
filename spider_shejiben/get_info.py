@@ -16,8 +16,8 @@ from settings import URL, UA, HAVE_SEND_CODE, SEND_TIMES, DETAIL_URL
 
 from mail_helper import send
 
-# to_user = ["shejiben_sunfuss@163.com", "sunfuss@126.com"]  # "shejiben_sunfuss@163.com","yangjt@knowbox.cn",
-to_user = ["yangjt@knowbox.cn"]  # "shejiben_sunfuss@163.com","yangjt@knowbox.cn",
+to_user = ["shejiben_sunfuss@163.com", "sunfuss@126.com"]  # "shejiben_sunfuss@163.com","yangjt@knowbox.cn",
+# to_user = ["yangjt@knowbox.cn"]  # "shejiben_sunfuss@163.com","yangjt@knowbox.cn",
 
 
 def merge_news_info(page_content):
