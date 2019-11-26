@@ -9,7 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 UA = UserAgent()
 
-URL = 'https://www.shejiben.com/order_lobby/?city=beijing&showtype=1'
+URL = 'https://www.shejiben.com/order_lobby/?city=beijing'
 # URL = 'https://www.shejiben.com/order_lobby/?city=beijing'city=beijing&
 DETAIL_URL = "https://www.shejiben.com/order_lobby/order.php?id=%s"
 
