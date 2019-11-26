@@ -90,7 +90,7 @@ def get_show():
             merge_news_info(res_c)
         except Exception as e:
             print("主程序报错 %s" % e)
-        time.sleep(random.randint(10, 30))
+        time.sleep(random.randint(2, 6))
 
 
 if __name__ == '__main__':
