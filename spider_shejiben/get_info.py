@@ -62,7 +62,7 @@ def merge_news_info(page_content):
     print("finish", datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
     if message:
         send(message, to_user)
-    print("邮件发送完成")
+    # print("邮件发送完成")
     return news_list
 
 

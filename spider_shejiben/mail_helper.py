@@ -11,7 +11,7 @@ def send(message, to_user):
         # server = smtplib.SMTP_SSL("smtp.163.com", 465)
         user = "3467266139@qq.com"
         passwd = "wjmxscginvlncjic"
-        server = smtplib.SMTP("smtp.qq.com", 25)
+        server = smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(user, passwd)
         server.sendmail(user, to_user, get_attach(message))
         server.quit()
