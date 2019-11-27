@@ -14,4 +14,4 @@ URL = 'https://www.shejiben.com/order_lobby/?city=beijing&showtype=1'
 DETAIL_URL = "https://www.shejiben.com/order_lobby/order.php?id=%s"
 
 HAVE_SEND_CODE = {}
-SEND_TIMES = 30
+SEND_TIMES = 3
